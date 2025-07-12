@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card{
+    @apply bg-gray-100 ;
+}
+.height-100{
+    @apply h-96;
+}
+.item{
+    @apply flex ;
+}
+.btn{
+    @apply bg-blue-500 
+    text-white 
+    px-6 
+    py-2 
+    rounded 
+    hover:bg-blue-600;
+}
+.input{
+    @apply border 
+    focus:outline-blue-500 
+    rounded 
+    px-4 
+    py-2 
+    w-11/12 
+    hover:border-blue-500;
+}
