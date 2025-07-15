@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../core/auth.guard';
 import { MainComponent } from './main.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 const routes: Routes = [

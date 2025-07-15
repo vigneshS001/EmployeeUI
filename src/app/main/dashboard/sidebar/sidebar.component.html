@@ -1,4 +1,4 @@
-<nav class="h-full p-4 space-y-4">
+<!-- <nav class="h-full p-4 space-y-4">
   <h2 class="text-xl font-bold">EMS</h2>
   <ul class="space-y-2">
     <li><a routerLink="/dashboard/home" class="hover:text-blue-400">Dashboard</a></li>
@@ -6,4 +6,73 @@
     <li><a routerLink="/dashboard/attendance" class="hover:text-blue-400">Attendance</a></li>
     <li><a routerLink="/dashboard/leaves" class="hover:text-blue-400">Leave Requests</a></li>
   </ul>
-</nav>
+</nav> -->
+
+<div class="h-screen w-64 bg-white shadow-md flex flex-col justify-between">
+  <div>
+    <div class="text-2xl font-bold px-6 py-4 flex items-center gap-2">
+      <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 2h4v4H2V2zm6 0h10v4H8V2zM2 8h4v10H2V8zm6 0h10v10H8V8z" />
+      </svg>
+    </div>
+
+    <p class="text-xs text-gray-400 px-6 pt-2">MENU</p>
+    <ul class="px-4 mt-2 space-y-2">
+      <li>
+        <a routerLink="/main/dashboard/home" 
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }" 
+          class="menu-link">
+          <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M3 3h18v18H3V3z" />
+          </svg> -->
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M9.143 4H4.857A.857.857 0 0 0 4 4.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 10 9.143V4.857A.857.857 0 0 0 9.143 4Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286A.857.857 0 0 0 20 9.143V4.857A.857.857 0 0 0 19.143 4Zm-10 10H4.857a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286A.857.857 0 0 0 9.143 14Zm10 0h-4.286a.857.857 0 0 0-.857.857v4.286c0 .473.384.857.857.857h4.286a.857.857 0 0 0 .857-.857v-4.286a.857.857 0 0 0-.857-.857Z"/>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a routerLink="/main/dashboard/calendar" 
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="menu-link">
+          <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M8 7v1m8-1v1m-9 4h10" />
+          </svg> -->
+          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+          </svg>
+          Calendar
+        </a>
+      </li>
+      <li>
+        <a routerLink="/main/dashboard/employee" 
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="menu-link">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4S8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+          Employees Profile
+        </a>
+      </li>
+      <!-- You can add collapsible sections here later -->
+    </ul>
+  </div>
+
+  <div>
+    <p class="text-xs text-gray-400 px-6 pb-2">SUPPORT</p>
+    <a routerLink="/support/chat"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }" 
+      class="menu-link">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M7 8h10M7 12h5m1 8l-4-4H5a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2h-3z" />
+      </svg>
+      Chat
+    </a>
+  </div>
+</div>

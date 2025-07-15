@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       // Store login status
       localStorage.setItem('loggedIn', 'true');
       // Navigate to dashboard
-      this.router.navigate(['/dashboard/home']);
+      this.router.navigate(['/main/dashboard/home']);
     } else {
       alert('Invalid credentials');
     }

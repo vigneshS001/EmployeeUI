@@ -7,6 +7,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard.component';
+import { CalendarComponent } from '../calendar/calendar.component';
+import { EmployeeComponent } from '../employee/employee.component';
+import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
 
 
 @NgModule({
@@ -15,11 +18,14 @@ import { DashboardComponent } from './dashboard.component';
     HomeComponent,
     LayoutComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    CalendarComponent,
+    EmployeeComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    FullCalendarModule
   ]
 })
 export class DashboardModule { }

@@ -19,7 +19,15 @@
     rounded 
     hover:bg-blue-600;
 }
-.input{
+.btn-create{
+    @apply bg-green-500 
+    text-white 
+    px-6 
+    py-2 
+    rounded 
+    hover:bg-green-600;
+}
+.input-login{
     @apply border 
     focus:outline-blue-500 
     rounded 
@@ -27,4 +35,36 @@
     py-2 
     w-11/12 
     hover:border-blue-500;
+}
+.input{
+    @apply border 
+    focus:outline-blue-500 
+    rounded 
+    px-4 
+    py-2 
+    w-auto
+    hover:border-blue-500;
+}
+.menu-link {
+  @apply flex items-center gap-2 px-4 py-2 rounded-md text-gray-800;
+}
+
+.active-link {
+  @apply bg-blue-100 text-blue-600;
+}
+
+.card{
+	@apply bg-gray-300 rounded-lg shadow-md p-4;
+}
+    .inner-card{
+        @apply bg-white rounded-lg shadow p-2 w-full 
+            justify-between items-center flex mt-2;
+}
+.list-container{
+    // @apply flex items-center;
+    @apply bg-white rounded-lg shadow p-2 w-full 
+         items-center mt-2 ;
+}
+.list{
+    @apply flex flex-col gap-2;
 }
