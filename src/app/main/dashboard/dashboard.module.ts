@@ -9,7 +9,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard.component';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { EmployeeComponent } from '../employee/employee.component';
-import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
+import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
+import { BadgeModule } from 'primeng/badge';
 
 
 @NgModule({
@@ -25,7 +31,13 @@ import { FullCalendarComponent, FullCalendarModule } from '@fullcalendar/angular
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    CardModule,
+    TableModule,
+    ChartModule,
+    ButtonModule,
+    CalendarModule,
+    BadgeModule
   ]
 })
 export class DashboardModule { }
