@@ -16,6 +16,7 @@ import { ChartModule } from 'primeng/chart';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { BadgeModule } from 'primeng/badge';
+import { DialogModule } from "primeng/dialog";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { BadgeModule } from 'primeng/badge';
     ChartModule,
     ButtonModule,
     CalendarModule,
-    BadgeModule
-  ]
+    BadgeModule,
+    DialogModule
+]
 })
 export class DashboardModule { }
