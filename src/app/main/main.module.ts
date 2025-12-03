@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { EmployeeComponent } from './employee/employee.component';
+import {DialogModule} from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { EmployeeComponent } from './employee/employee.component';
   imports: [
     CommonModule,
     MainRoutingModule,
-    FullCalendarModule
+    FullCalendarModule,
+    DialogModule
   ]
 })
 export class MainModule { }

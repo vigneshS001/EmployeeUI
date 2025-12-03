@@ -1,65 +1,65 @@
-<p>employee works!</p>
+<!-- <p>employee works!</p> -->
 <div class="card">
-    <!-- <div class="inner-card">
-        <button class="btn btn-primary">Edit Profile</button>
-        <h2 class="font-bold">Employee Profile</h2>
-        <i class="pi pi-search"></i>
-        <input class="input" autocomplete="nope" pInputText type="text"
-             placeholder="Search..." />
-    </div> -->
     <div class="inner-card flex-col items-center text-center">
         <div class="flex justify-between w-full items-center">
-            <h2 class="font-bold mb-2">Employee Details</h2>
+            <h2 class="font-bold mb-2">Employees</h2>
             <div class="flex items-center gap-2">
                 <i class="pi pi-search"></i>
-                <input class="input" autocomplete="nope" pInputText type="text" placeholder="Search..." />
+                <input autocomplete="nope" class="input" pInputText type="text"
+                    #globalSearch
+                    (input)="dt.filterGlobal(globalSearch.value , 'contains')"
+                    placeholder="Search..." />
                 <button class="btn btn-secondary">Refresh</button>
             </div>
         </div>
     </div>
     <div class="list-container">
-        <div class="flex justify-between items-center">
-            <button class="btn btn-create">New</button>
-            <h3 class="font-bold">Employee List</h3>
+        <div class="flex">
+            <button class="btn btn-create" (click)="openNew()">New</button>
         </div>
-        <div class="justify-center">
-            <table class="min-w-full bg-white border rounded shadow">
-                <thead class="bg-blue-100 text-left text-sm font-semibold text-gray-700">
+        <div class="justify-center mt-1">
+            <p-table #dt [value]="employeeList" [columns]="cols" [paginator]="true" [rows]="10" [globalFilterFields]="['name', 'position']"
+                [rowHover]="true">
+                <ng-template pTemplate="header" let-columns>
                     <tr>
-                        <th class="p-3">Photo</th>
-                        <th class="p-3">Name</th>
-                        <th class="p-3">Email</th>
-                        <th class="p-3">Department</th>
-                        <th class="p-3">Designation</th>
-                        <th class="p-3">Status</th>
-                        <th class="p-3">Joining Date</th>
-                        <th class="p-3">Actions</th>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field" class="filterSortDiv" pResizableColumn>
+                            <div>{{col.header}}
+                                <p-sortIcon [field]="col.field"></p-sortIcon>
+                                <p-columnFilter *ngIf="col.type === 'text'" type="text" [field]="col.field" display="menu"
+                                    class="filterIcon"></p-columnFilter>
+                            </div>
+                        </th>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let emp of employeeList" class="hover:bg-blue-50 border-t">
-                        <td class="p-3">
-                            <img [src]="emp.photoUrl" alt="Photo" class="w-10 h-10 rounded-full" />
-                        </td>
-                        <td class="p-3">{{ emp.name }}</td>
-                        <td class="p-3">{{ emp.email }}</td>
-                        <td class="p-3">{{ emp.department }}</td>
-                        <td class="p-3">{{ emp.designation }}</td>
-                        <td class="p-3">
-                            <span class="px-2 py-1 rounded text-white"
-                                [ngClass]="emp.status === 'Active' ? 'bg-green-500' : 'bg-red-500'">
-                                {{ emp.status }}
-                            </span>
-                        </td>
-                        <td class="p-3">{{ emp.joiningDate | date:'mediumDate' }}</td>
-                        <td class="p-3 space-x-2">
-                            <button class="text-blue-600 hover:underline">View</button>
-                            <button class="text-yellow-500 hover:underline">Edit</button>
-                            <button class="text-red-500 hover:underline">Delete</button>
+                </ng-template>
+                <ng-template pTemplate="body" let-emp let-columns="columns">
+                    <tr (dblclick)="edit(emp)">
+                        <td *ngFor="let col of columns">
+                            <label *ngIf="col.type === 'text'">
+                                {{ emp[col.field] }}
+                            </label>
                         </td>
                     </tr>
-                </tbody>
-            </table>
+                </ng-template>
+            </p-table>
         </div>
     </div>
 </div>
+<!-- <p-dialog [(visible)]="dialog" [modal]="true" styleClass="dialog"> -->
+<p-dialog #browseDialog [(visible)]="dialog" [style]="{width: '100%', height: '100%'}" class="supplier_dialog"
+    header="Empoloyee" [modal]="true" styleClass="p-fluid">
+    <div class="">
+
+    </div>
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div>
+                <ul>
+                    <li *ngFor="let val of langList">
+                        {{val}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </ng-template>
+</p-dialog>
