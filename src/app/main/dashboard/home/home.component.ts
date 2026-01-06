@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
-import effects from 'chart.js/dist/helpers/helpers.easing';
 
 @Component({
   selector: 'app-home',
